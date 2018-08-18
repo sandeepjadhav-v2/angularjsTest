@@ -6,16 +6,15 @@
   float: left;
   padding-top: 60px;
   height: 100%;
+  z-index: 2;
 }
- 
+
 .layout-header {
   position: fixed;
   width: 100%;
-  /* width: calc(100% - 200px); */
   z-index: 99999;
   color: #010101;
   background: #fff;
-   
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -33,6 +32,24 @@
   margin-top: 60px;
 }
 
-.layout-content{
-  padding: 10px;
+// .layout-content{
+//   padding: 10px 0 10px 10px;
+// }
+.breadcrumb{
+  position: absolute;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 1;
+  background: rgb(244, 248, 251);
+
 }
+.content-wrapper .content {
+  margin-top: 55px;
+}
+.welcomeText{
+  padding: 15px
+}
+.text-center{
+  text-align: center;
+}
+

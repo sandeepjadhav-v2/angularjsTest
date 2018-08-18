@@ -20,7 +20,10 @@
         url: '/sales',
         templateUrl: './modules/dashboard/views/sales.dashboard-view.html',
         controller: 'DashboardController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: 'Dashboard'
+         }
       })
 
   }

@@ -1,1 +1,113 @@
-<h1>Sales Dashboard</h1>
+<section class="content" ng-controller="DashboardController as vm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Types of notifications
+          </div>
+          <div class="card-body">
+            <div class="btn-group-vertical">
+              <button class="btn btn-primary" ng-click="primary()">Primary Notification</button>
+              <button class="btn btn-danger" ng-click="error()">Error Notification</button>
+              <button class="btn btn-success" ng-click="success()">Success Notification</button>
+              <button class="btn btn-info" ng-click="info()">Information Notification</button>
+              <button class="btn btn-warning" ng-click="warning()">Warning Notification</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Notification with title
+          </div>
+          <div class="card-body">
+            <div class="btn-group-vertical">
+              <button class="btn btn-primary" ng-click="primaryTitle()">Primary Notification</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Custom show delay
+          </div>
+          <div class="card-body">
+            <div class="btn-group-vertical">
+              <button class="btn btn-danger" ng-click="errorTime()">Error Notification 1s</button>
+              <button class="btn btn-success" ng-click="successTime()">Success Notification 20s</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Using html tags within message and title
+          </div>
+          <div class="card-body">
+            <div class="btn-group-vertical">
+              <button class="btn btn-danger" ng-click="errorHtml()">Error Notification</button>
+              <button class="btn btn-success" ng-click="successHtml()">Success Notification</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            Grid Options
+          </div>
+          <div class="card-body">
+            <div id="grid1" ui-grid-pagination ui-grid="vm.gridOptions1" class="grid"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <div id="grid1" ui-grid-pagination ui-grid="vm.gridOptions1" class="grid"></div>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

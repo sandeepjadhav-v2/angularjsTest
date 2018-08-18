@@ -6,9 +6,22 @@
         // applicationEnvironment: window.env,
         applicationModuleName: applicationModuleName,
         applicationModuleVendorDependencies: [
+            'ngResource',
+            'ngAnimate',
+            'ngMessages',
             'ui.router',
-            'ngSlimScroll'
-        ],
+            'ngSlimScroll',
+            'ui.grid',
+            'ui.grid.grouping',
+            'ui.grid.pagination',
+            'ui.grid.edit',
+            'ui.grid.resizeColumns',
+            'ui.grid.selection',
+            'ui-notification',
+            'ncy-angular-breadcrumb',
+            'angularScreenfull',
+            'ui.rCalendar'
+          ],
         registerModule: registerModule
     }
     window.ApplicationConfiguration = service;
@@ -45,6 +58,10 @@
         // Add the module to the AngularJS configuration file
         angular.module(applicationModuleName).requires.push(moduleName);
     }
- 
+
+      // Angular-ui-notification configuration
+
+
+
 }(window));
 

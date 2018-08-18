@@ -45,22 +45,16 @@
           label : 'Home',
           href: '/'
         }, {
-        icon : 'fa-tachometer-alt',
+        icon : 'fa-cog',
         label : 'Dashboard',
         children : [
-          {label : 'Sales Dashboard', icon : 'fa-circle', href : '/dashboard/sales'},
-          {label : 'Save as...', icon : 'fa-circle',
-          callback : function(item){
-              // do whatever you need
-            }
-          },
-          {label : 'Refresh', icon : 'fa-refresh'}
+          {label : 'Sales Dashboard', icon : 'fa-circle', href : '/dashboard/sales'}
         ]}, {
         icon : 'fa-plane',
-        label : 'Edit',
+        label : 'Master Settings',
         children : [
-          {label : 'Cut', icon : 'fa-circle'},
-          {label : 'Copy', icon : 'fa-circle'},
+          {label : 'Company', icon : 'fa-circle',  href : '/master-settings/company'},
+          {label : 'Copy', icon : 'fa-circle',  href : '/master-settings/gst-slab'},
           {label : 'Paste', icon : 'fa-circle'}
         ]}
       ]

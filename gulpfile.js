@@ -38,6 +38,12 @@ gulp.task('images', function() {
       .pipe(gulp.dest(out));
   });
 
+gulp.task('copy', function () {
+  var out = folder.build + 'assets/bower/';
+  return gulp.src(folder.src + 'assets/bower/**')
+    .pipe(gulp.dest(out));
+});
+
 // Vendor JavaScript processing
 gulp.task('SCSS', function() {
   var jsbuild = gulp.src(folder.src + 'assets/scss/*')
@@ -69,7 +75,7 @@ gulp.task('html', ['images'] , function() {
 });
 
  // HTML processing
- gulp.task('allhtml', ['images', 'SCSS'] , function() {
+ gulp.task('allhtml', ['images', 'SCSS', 'copy'] , function() {
   var
     out = folder.build + 'modules/',
     page = gulp.src(folder.src + 'modules/**/views/*.html')

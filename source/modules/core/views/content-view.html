@@ -1,146 +1,115 @@
-<div class="content" slim-scroll height="100%">
+<section class="content" ng-controller="ContentController as vm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 welcomeText text-center">
+        <h3>Welcome to Docker Cloud!</h3>
+        <p>Let's get you familiarized with the central concepts of Docker Cloud.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Basic buttons
+          </div>
+          <div class="card-body demo-btn">
+            <button class="bt bt-default">Default</button>
+            <button class="bt bt-primary">Primary</button>
+            <button class="bt bt-info">Info</button>
+            <button class="bt bt-success">Success</button>
+            <button class="bt bt-mint">Mint</button>
+            <button class="bt bt-warning">Warning</button>
+            <button class="bt bt-danger">Danger</button>
+            <button class="bt bt-pink">Pink</button>
+            <button class="bt bt-purple">Purple</button>
+            <button class="bt bt-dark">Dark</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Rounded buttons
+          </div>
+          <div class="card-body demo-btn">
+            <button class="bt bt-default bt-rounded">Default</button>
+            <button class="bt bt-primary bt-rounded">Primary</button>
+            <button class="bt bt-info bt-rounded">Info</button>
+            <button class="bt bt-success  bt-rounded">Success</button>
+            <button class="bt bt-mint  bt-rounded">Mint</button>
+            <button class="bt bt-warning bt-rounded">Warning</button>
+            <button class="bt bt-danger bt-rounded">Danger</button>
+            <button class="bt bt-pink bt-rounded">Pink</button>
+            <button class="bt bt-purple bt-rounded">Purple</button>
+            <button class="bt bt-dark bt-rounded">Dark</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Calender
+          </div>
+          <div class="card-body demo-btn">
+            <calendar calendar-mode="mode" event-source="eventSource">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Radio Buttons & Checkboxes
+          </div>
+          <div class="card-body">
+              <label class="col-lg-3 control-label">Radio</label>
 
+            <div class="radio">
+              <input id="demo-radio-1" class="magic-radio" type="radio" name="memberType" value="free" data-bv-field="memberType">
+              <label for="demo-radio-1">Free</label>
+              <input id="demo-radio-2" class="magic-radio" type="radio" name="memberType" value="personal" data-bv-field="memberType">
+              <label for="demo-radio-2">Personal</label>
+              <input id="demo-radio-3" class="magic-radio" type="radio" name="memberType" value="bussines" data-bv-field="memberType">
+              <label for="demo-radio-3">Bussiness</label>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="col-lg-3 control-label">Checkbox</label>
+                <div class="col-lg-7">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
+                    <div class="checkbox">
+                        <input id="demo-checkbox-2" class="magic-checkbox" type="checkbox" name="programs[]" value="net" data-bv-field="programs[]">
+                        <label for="demo-checkbox-2">.Net</label>
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
 
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
+                    <div class="checkbox">
+                        <input id="demo-checkbox-3" class="magic-checkbox" type="checkbox" name="programs[]" value="java" data-bv-field="programs[]">
+                        <label for="demo-checkbox-3">Java</label>
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                      Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-    </div>
 
+                    <div class="checkbox">
+                        <input id="demo-checkbox-4" class="magic-checkbox" type="checkbox" name="programs[]" value="c" data-bv-field="programs[]">
+                        <label for="demo-checkbox-4">C/C++</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="demo-checkbox-5" class="magic-checkbox" type="checkbox" name="programs[]" value="php" data-bv-field="programs[]">
+                        <label for="demo-checkbox-5">PHP</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="demo-checkbox-6" class="magic-checkbox" type="checkbox" name="programs[]" value="perl" data-bv-field="programs[]">
+                        <label for="demo-checkbox-6">Perl</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="demo-checkbox-7" class="magic-checkbox" type="checkbox" name="programs[]" value="Ruby" data-bv-field="programs[]">
+                        <label for="demo-checkbox-7">Ruby</label>
+                    </div><i class="form-control-feedback" data-bv-icon-for="programs[]" style="display: none;"></i>
+                <small class="help-block" data-bv-validator="choice" data-bv-for="programs[]" data-bv-result="NOT_VALIDATED" style="display: none;">Please choose 2 - 4 programming languages you are good at</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
