@@ -1,64 +1,116 @@
-(function () {
-    'use strict';
+(function() {
+  "use strict";
 
-    angular
-      .module('core')
-      .controller('SidebarController', SidebarController);
+  angular.module("core").controller("SidebarController", SidebarController);
 
-    function SidebarController() {
-      var vm = this;
-      vm.location = 'Sidebar Controller';
-      vm.menus = [
+  SidebarController.$inject = ["$scope", "$transitions", "$state"];
+  function SidebarController($scope, $transitions, $state) {
+    var vm = this;
+    vm.isCollapsed = false;
+
+    vm.location = "Sidebar Controller";
+    console.log(vm.location);
+    vm.mainMenu = {
+      animation: true,
+      data: [
         {
-          "name": "Dashboard",
-          "url": "#",
-          "icon": "fas fa-tachometer-alt",
-          "subMenus": [
+          icon: "fa-home",
+          label: "Home",
+          href: "/",
+          state: "home",
+          title: 'Home',
+          children: []
+        },
+        {
+          icon: "fa-cog",
+          label: "Dashboard",
+          state: "dashboard",
+          title: 'Dashboard',
+          children: [
             {
-              "name": "Sales Dashboard",
-              "url": "dashboard.sales"
+              label: "Sales Dashboard",
+              icon: "fa-circle",
+              state: "dashboard.sales",
+              href: "/dashboard/sales"
             }
           ]
-        },{
-          "name": "Master Settings",
-          "url": "#",
-          "icon": "fas fa-chart-bar",
-          "subMenus": [
+        },
+        {
+          icon: "fa-plane",
+          label: "Master Settings",
+          state: "master-settings",
+          title: 'Master Settings',
+          children: [
             {
-              "name": "Company",
-              "url": "master-settings.company"
-            },{
-              "name": "GST Slab",
-              "url": "master-settings.gst-slab"
-            },{
-              "name": "Locations",
-              "url": "locations"
+              label: "Company",
+              icon: "fa-circle",
+              state: "master-settings.company",
+              href: "/master-settings/company"
+            },
+            {
+              label: "Copy",
+              icon: "fa-circle",
+              state: "master-settings.gst-slab",
+              href: "/master-settings/gst-slab"
+            },
+            {
+              label: "Paste",
+              icon: "fa-circle",
+              state: "master-settings.sales"
             }
           ]
         }
-      ];
-
-      vm.config ={
-        animation:true,
-        data:[{
-          icon : 'fa-home',
-          label : 'Home',
-          href: '/'
-        }, {
-        icon : 'fa-cog',
-        label : 'Dashboard',
-        children : [
-          {label : 'Sales Dashboard', icon : 'fa-circle', href : '/dashboard/sales'}
-        ]}, {
-        icon : 'fa-plane',
-        label : 'Master Settings',
-        children : [
-          {label : 'Company', icon : 'fa-circle',  href : '/master-settings/company'},
-          {label : 'Copy', icon : 'fa-circle',  href : '/master-settings/gst-slab'},
-          {label : 'Paste', icon : 'fa-circle'}
-        ]}
       ]
+    };
+
+    $transitions.onSuccess("$stateChangeSuccess", stateChangeSuccess);
+
+    function stateChangeSuccess() {
+      vm.isCollapsed = false;
+      var forceCloseMainMenu = false;
+      for (var i = 0; i < vm.mainMenu.data.length; i++) {
+        var menuItem = vm.mainMenu.data[i];
+        if ($state.current.name === "home") {
+          forceCloseMainMenu = true;
+        }
+        if (
+          !checkIfCurrentStateBelongsToMenu(vm.mainMenu) &&
+          !forceCloseMainMenu
+        ) {
+          return;
+        }
+        menuItem.active = false;
+        for (var si = 0; si < menuItem.children.length; si++) {
+          var menuSubItem = menuItem.children[si];
+          if (
+            menuSubItem.state !== "" &&
+            menuSubItem.state === $state.current.name
+          ) {
+            menuSubItem.active = true && !forceCloseMainMenu;
+            menuItem.active = true && !forceCloseMainMenu;
+          } else {
+            menuSubItem.active = false;
+          }
+        }
+      }
     }
 
+    function checkIfCurrentStateBelongsToMenu(menu) {
+      var belongstoMenu = 0;
+      for (var i = 0; i < menu.data.length; i++) {
+        var menuItem = menu.data[i];
+        for (var si = 0; si < menuItem.children.length; si++) {
+          var menuSubItem = menuItem.children[si];
+           if (
+            menuSubItem.state !== "" &&
+            menuSubItem.state === $state.current.name
+          ) {
+            belongstoMenu = 1;
+            return belongstoMenu;
+          }
+        }
+      }
+       return belongstoMenu;
     }
-  }());
+  }
+})();
